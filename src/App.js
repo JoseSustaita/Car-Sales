@@ -44,7 +44,11 @@ const App = () => {
     </div>
   );
 };
-
-export default connect(() => {
-  return {};
-}, {})(App);
+const mapStateToProps = (state) => {
+  return {
+    car: state.car,
+    additionalFeatures: state.additionalFeatures,
+    additionalPrice: state.additionalPrice,
+  };
+};
+export default connect(mapStateToProps, {})(App);
